@@ -7,20 +7,41 @@ document.querySelector('form').addEventListener('submit', function(e){
   alert('Formulario enviado (simulado).');
 });
 
-// Crear partículas burbuja
-const container = document.createElement('div');
-container.classList.add('particles');
-document.body.appendChild(container);
+// ACORDEONES (solo uno abierto a la vez)
+const acordeonBtns = document.querySelectorAll('.acordeon-btn');
+acordeonBtns.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const targetId = btn.getAttribute('data-target');
+    const panel = document.getElementById(targetId);
 
-for(let i=0;i<80;i++){
-  const particle = document.createElement('div');
-  particle.classList.add('particle');
-  const size = Math.random()*4+1;
-  particle.style.width = `${size}px`;
-  particle.style.height = `${size}px`;
-  particle.style.top = `${Math.random()*100}vh`;
-  particle.style.left = `${Math.random()*100}vw`;
-  particle.style.animationDuration = `${Math.random()*30+20}s`;
-  particle.style.opacity = Math.random()*0.3+0.05;
-  container.appendChild(particle);
-}
+    // Cerrar todos los demás
+    document.querySelectorAll('.acordeon-panel').forEach(p=>{
+      if(p !== panel) p.style.display='none';
+    });
+
+    // Alternar el panel actual
+    panel.style.display = (panel.style.display==='block') ? 'none' : 'block';
+  });
+});
+
+// Lightbox galería
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.querySelector('.lightbox-img');
+const lightboxClose = document.querySelector('.lightbox-close');
+
+document.querySelectorAll('.galeria img').forEach(img=>{
+  img.addEventListener('click',()=>{
+    lightbox.style.display = 'flex';
+    lightboxImg.src = img.src;
+  });
+});
+
+// Cerrar lightbox
+lightboxClose.addEventListener('click',()=>{
+  lightbox.style.display = 'none';
+});
+lightbox.addEventListener('click', e=>{
+  if(e.target === lightbox){
+    lightbox.style.display = 'none';
+  }
+});
