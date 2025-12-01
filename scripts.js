@@ -7,23 +7,41 @@ document.querySelector('form').addEventListener('submit', function(e){
   alert('Formulario enviado (simulado).');
 });
 
-// Acordeón "Sobre mí"
-const accordionBtn = document.querySelector('.accordion-btn');
-const accordionContent = document.querySelector('.accordion-content');
-accordionBtn.addEventListener('click', () => {
-  accordionContent.classList.toggle('show');
+// ACORDEONES (solo uno abierto a la vez)
+const acordeonBtns = document.querySelectorAll('.acordeon-btn');
+acordeonBtns.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const targetId = btn.getAttribute('data-target');
+    const panel = document.getElementById(targetId);
+
+    // Cerrar todos los demás
+    document.querySelectorAll('.acordeon-panel').forEach(p=>{
+      if(p !== panel) p.style.display='none';
+    });
+
+    // Alternar el panel actual
+    panel.style.display = (panel.style.display==='block') ? 'none' : 'block';
+  });
 });
 
-// Crear burbujas flotantes
-const bubblesContainer = document.querySelector('.bubbles');
-for (let i = 0; i < 30; i++) {
-  const bubble = document.createElement('div');
-  bubble.classList.add('bubble');
-  const size = Math.random() * 20 + 15;
-  bubble.style.width = `${size}px`;
-  bubble.style.height = `${size}px`;
-  bubble.style.left = `${Math.random() * 100}vw`;
-  bubble.style.animationDuration = `${Math.random() * 20 + 15}s`;
-  bubble.style.opacity = Math.random() * 0.5 + 0.4;
-  bubblesContainer.appendChild(bubble);
-};
+// Lightbox galería
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.querySelector('.lightbox-img');
+const lightboxClose = document.querySelector('.lightbox-close');
+
+document.querySelectorAll('.galeria img').forEach(img=>{
+  img.addEventListener('click',()=>{
+    lightbox.style.display = 'flex';
+    lightboxImg.src = img.src;
+  });
+});
+
+// Cerrar lightbox
+lightboxClose.addEventListener('click',()=>{
+  lightbox.style.display = 'none';
+});
+lightbox.addEventListener('click', e=>{
+  if(e.target === lightbox){
+    lightbox.style.display = 'none';
+  }
+});
