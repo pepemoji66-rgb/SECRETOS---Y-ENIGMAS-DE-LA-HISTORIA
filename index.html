@@ -1,103 +1,148 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Los Grandes Secretos de la Historia</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Los Grandes Secretos de la Historia</title>
+<link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <h1 class="logo">Mi Página</h1>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#audios">Audios de Interés</a></li>
-        <li><a href="#videos">Videos Relacionados</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+<!-- HEADER -->
+<header class="site-header">
+  <h1 class="logo">Mi Página</h1>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#audios">Audios</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#tabla">Contenido Relacionado</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- TÍTULO PRINCIPAL -->
-  <section class="titulo-principal">
-    <h2>SECRETOS Y ENIGMAS DE LA HISTORIA</h2>
-  </section>
+<!-- TÍTULO -->
+<section class="titulo-principal">
+  <h2>SECRETOS Y ENIGMAS DE LA HISTORIA</h2>
+</section>
 
-  <!-- HERO -->
-  <section id="inicio" class="hero container">
-    <h2>Hola — soy [JOSE MORENO IMENEZ]</h2>
-    <p>Esto es mi primera página web creada con HTML y CSS. El tema que he elegido, es porque siento fascinación por el gran secreto que nos inspiran las pirámides, sin duda uno de los mayores enigmas que la historia nos muestra.</p>
-  </section>
+<!-- HERO -->
+<section id="inicio" class="hero container">
+  <h2>Hola — soy JOSE MORENO IMENEZ</h2>
 
-  <!-- AUDIOS DE INTERÉS -->
-  <section id="audios" class="audios container">
-    <h3>Audios de Interés</h3>
+  <button class="acordeon-btn" data-target="sobre-mi-panel">Sobre mí</button>
+  <div id="sobre-mi-panel" class="acordeon-panel">
+    <p>Soy un apasionado de los misterios, los enigmas de la historia y especialmente de las pirámides, uno de los mayores secretos de la humanidad.</p>
+  </div>
+</section>
+
+<!-- AUDIOS -->
+<section id="audios" class="audios container">
+  <h3>Audios de Interés</h3>
+  <button class="acordeon-btn" data-target="audio-panel">Mostrar / Ocultar Audio</button>
+  <div id="audio-panel" class="acordeon-panel">
     <ul class="cards">
-      <li class="card audio-card">
-        <h4>Audio 1</h4>
-        <audio controls>
-          <source src="https://drive.google.com/uc?export=download&id=1rGSoLSp1jLadon6P5zLaZMSrVD9na7DN" type="audio/mpeg">
-          Tu navegador no soporta el reproductor de audio.
-        </audio>
-      </li>
-      <li class="card audio-card">
+      <li class="card audio-card" style="max-width:500px; width:100%;">
         <h4>Audio 2</h4>
-        <audio controls>
-          <source src="https://drive.google.com/uc?export=download&id=12i3O3QpLNMNWBOi-w8kcdTCdsrKPdhED" type="audio/mpeg">
+        <audio controls style="width:100%;">
+          <source src="audios/audio2.mp3" type="audio/mp3">
           Tu navegador no soporta el reproductor de audio.
         </audio>
       </li>
     </ul>
-  </section>
+  </div>
+</section>
 
-  <!-- VIDEOS RELACIONADOS -->
-  <section id="videos" class="videos container">
-    <h3>Videos Relacionados</h3>
-    <ul class="cards">
-      <li class="card video-card">
-        <h4>Video 1</h4>
-        <iframe width="100%" height="200" src="https://www.youtube.com/embed/G0IpsiIRDs0" frameborder="0" allowfullscreen></iframe>
-      </li>
-      <li class="card video-card">
-        <h4>Video 2</h4>
-        <iframe width="100%" height="200" src="https://www.youtube.com/embed/Nu-HKXHTKrM" frameborder="0" allowfullscreen></iframe>
-      </li>
-      <li class="card video-card">
-        <h4>Video 3</h4>
-        <iframe width="100%" height="200" src="https://www.youtube.com/embed/TJcp13hAO3U" frameborder="0" allowfullscreen></iframe>
-      </li>
+<!-- VIDEOS -->
+<section id="videos" class="videos container">
+  <h3>Videos Relacionados</h3>
+  <div class="videos-hero">
+    <iframe width="300" height="200" src="https://www.youtube.com/embed/G0IpsiIRDs0" frameborder="0" allowfullscreen></iframe>
+    <iframe width="300" height="200" src="https://www.youtube.com/embed/Nu-HKXHTKrM" frameborder="0" allowfullscreen></iframe>
+    <iframe width="300" height="200" src="https://www.youtube.com/embed/TJcp13hAO3U" frameborder="0" allowfullscreen></iframe>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section class="galeria container">
+  <h3>Galería de Imágenes</h3>
+  <button class="acordeon-btn" data-target="galeria-panel">Mostrar / Ocultar Galería</button>
+  <div id="galeria-panel" class="acordeon-panel">
+    <ul>
+      <li><img src="Imagenes/1.jpg" alt=""></li>
+      <li><img src="Imagenes/2.jpg" alt=""></li>
+      <li><img src="Imagenes/3.jpg" alt=""></li>
+      <li><img src="Imagenes/4.jpg" alt=""></li>
+      <li><img src="Imagenes/5.jpg" alt=""></li>
+      <li><img src="Imagenes/7.webp" alt=""></li>
+      <li><img src="Imagenes/8.jpg" alt=""></li>
+      <li><img src="Imagenes/9.jpg" alt=""></li>
+      <li><img src="Imagenes/10.jpg" alt=""></li>
     </ul>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACTO -->
-  <section id="contacto" class="contact container">
-    <h3>Contacto</h3>
-    <form>
-      <label>Nombre<input type="text" name="name"/></label>
-      <label>Email<input type="email" name="email"/></label>
-      <label>Mensaje<textarea name="message"></textarea></label>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+<!-- TABLA DE CONTENIDO RELACIONADO -->
+<section id="tabla" class="container">
+  <h3>Contenido de Interés Relacionado</h3>
+  <table border="1" style="border-color:yellow; border-collapse:collapse; width:100%; text-align:center;">
+    <tr style="background:#6e2b91; color:#fff;">
+      <th>Mapa</th>
+      <th>Descripción</th>
+      <th>Recursos</th>
+    </tr>
+    <tr>
+      <td>
+        <button class="acordeon-btn" data-target="mapa-panel">Mostrar Mapa</button>
+        <div id="mapa-panel" class="acordeon-panel">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.27991467185!2d-74.25987568731506!3d40.69767006360927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c250b7d1d3c8ed%3A0xf7a3f849e6b2f1c6!2sNew%20York!5e0!3m2!1ses!2ses!4v1600000000000!5m2!1ses!2ses" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </td>
+      <td>
+        <button class="acordeon-btn" data-target="desc-panel">Mostrar Descripción</button>
+        <div id="desc-panel" class="acordeon-panel">
+          <p>Descripción de los misterios y enigmas de la historia relacionados con las pirámides y civilizaciones antiguas.</p>
+        </div>
+      </td>
+      <td>
+        <button class="acordeon-btn" data-target="recursos-panel">Recursos</button>
+        <div id="recursos-panel" class="acordeon-panel">
+          <ul>
+            <li><a href="#" target="_blank">📚 Historia de las Pirámides</a></li>
+            <li><a href="#" target="_blank">🎬 Documentales sobre Egipto</a></li>
+            <li><a href="#" target="_blank">🔍 Artículos de Egipto antiguo</a></li>
+            <li><a href="#" target="_blank">✍️ Guía rápida de jeroglíficos</a></li>
+          </ul>
+        </div>
+      </td>
+    </tr>
+  </table>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <p>© <span id="year"></span> Mi Página — Hecho por mí</p>
-  </footer>
+<!-- CONTACTO -->
+<section id="contacto" class="contact container">
+  <h3>Contacto</h3>
+  <form>
+    <label>Nombre<input type="text" name="name"/></label>
+    <label>Email<input type="email" name="email"/></label>
+    <label>Mensaje<textarea name="message"></textarea></label>
+    <button type="submit">Enviar</button>
+  </form>
+</section>
 
-  <script src="scripts.js"></script>
-  <script>
-    // Año dinámico
-    document.getElementById('year').textContent = new Date().getFullYear();
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="">
+</div>
 
-    // Formulario simulado
-    document.querySelector('form').addEventListener('submit', function(e){
-      e.preventDefault();
-      alert('Formulario enviado (simulado).');
-    });
-  </script>
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>© <span id="year"></span> Mi Página — Hecho por mí</p>
+</footer>
+
+<script src="scripts.js"></script>
 </body>
 </html>
+
